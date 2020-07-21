@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slow scrolling anchor with jQuery</title>
+        <style>
+            *{margin: 0;padding: 0;font-family: arial, sans-serif;text-decoration: none;text-transform: uppercase;}.nav{position: fixed;left: 0;top: 20px;padding: 10px;background: #fff;}.nav a{color: #000;padding: 0 15px;}.content{min-height: 900px;text-align: center;padding-top: 20%;}.content:nth-child(even) {background: #201656;color: #fff}.content:nth-child(odd) {background: #bbc0ff;color: #201656}
+        </style>
+    </head>
+    <body>
+        <div class="nav"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></div><div id="home" class="content"><h1>Home</h1></div><div id="about" class="content"><h1>About</h1></div><div id="services" class="content"><h1>Services</h1></div><div id="contact" class="content"><h1>Contact</h1></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script> 
+
+
+            // Slow scrolling anchor. Require jQuery
+            var $doc = $('html, body'); 
+            $('a').click(function() { 
+                    $doc.animate({ 
+                             scrollTop: $( $.attr(this, 'href') ).offset().top 
+                    }, 500); 
+                    return false; 
+            }); 
+
+
+        </script>
+    </body>
+</html>
